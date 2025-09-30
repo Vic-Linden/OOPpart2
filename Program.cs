@@ -37,8 +37,10 @@
 			{ "Skräppåsar", 50 },
 			{ "Handskar", 10 }};
 
+
+			Console.WriteLine("Here is the first part of the project");
 			
-			List<Person> hotelStaff = new List<Person>();
+			List<Person > hotelStaff = new List<Person>();
 
 			Manager maria = new Manager("Maria Svensson", 45, "M002", 55000m, new DateTime(2018, 5, 1), "0731142323", "maria.svensson@oophotel.se", "Victoriavägen 75", "Operations", 3, 0.35m, ManagementLevel.Senior) ;
 			Person johan = new Employee("Johan Andersson", 28, "E002", 32000m, new DateTime(2021, 9, 15), "070111222333", "johan.andersson@oophotel.se", "Hotellvägen 14", "Receptionist", "Front Desk", ShiftPreference.Morgon, 25, 7m);
@@ -54,38 +56,22 @@
             hotelStaff.Add(eva);
             hotelStaff.Add(slava);
 
-            /*
-			Console.WriteLine("Hotellets personal: ");
-			foreach (var person in hotelStaff)
+			foreach(var staff in hotelStaff)
 			{
-				person.PrintInfo();
-				person.Introduce();
-				person.DoWork();
-
-				if (person is Manager manager)
-				{
-					manager.HoldMeeting();
-				}
-
-
-				else if (person is Consultant consultant)
-				{
-					consultant.GiveAdvice();
-				}
-
-				Console.WriteLine("");
-
+				staff.PrintInfo();
+				Console.WriteLine("---------------------");
 			}
-
 
 			double averageAge = hotelStaff.Average(p => p.Age);
 			decimal totalSalary = hotelStaff.Sum(p => p.Salary);
 			Console.WriteLine($"Genomsnittlig ålder på personalen: {averageAge:F1}");
 			Console.WriteLine($"Total månadslön för anställda: {totalSalary} kr");
+
+			
+			Console.WriteLine("Press any button to se second part");
 			Console.ReadKey();
-			*/
 
-
+			Console.WriteLine();
             Department hotel = new Department("The OOP Hotel", new Employee("Victoria", "Manager"));
             Department frontDesk = new Department("Front Desk", new Employee("Theo", "Manager"));
 			Department housekeeping = new Department("Housekeeping", new Employee("Slava", "Manager"));
@@ -97,6 +83,10 @@
 			housekeeping.AddEmployee(new Employee("Bob", "Housekeeper"));
 
             hotel.PrintOrganizationChart();
+           
+
+		
+			
 			Console.ReadKey();
         }
 	}
